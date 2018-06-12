@@ -21,7 +21,7 @@ public class HelloWorldRestController {
         return "Welcome to RestTemplate Example.";
     }
  
-    @GetMapping("/message")
+    @GetMapping("/message/{name}")
     public Message readMessage(@PathVariable String name) {//Welcome page, non-rest
         return ReadMessageUseCase.readMessage(name);
     }

@@ -1,10 +1,12 @@
 package com.thomas.springmvc.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-//import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.thomas.businessLayer.businessObject.Message;
@@ -21,14 +23,15 @@ public class HelloWorldRestController {
         return "Welcome to RestTemplate Example.";
     }
  
-    @GetMapping("/message/{name}")
-    public Message readMessage(@PathVariable String name) {//Welcome page, non-rest
-        return ReadMessageUseCase.readMessage(name);
+    @RequestMapping(value = "/message/{name}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<Message> readMessage(@PathVariable String name) {
+        return new ResponseEntity<Message>(ReadMessageUseCase.readMessage(name), HttpStatus.OK);
     }
 
-    @PutMapping("/message")
-    public void putMessage(@PathVariable Message message) {//Welcome page, non-rest
-    	ReadMessageUseCase.writeMessage(message);
+//    @PutMapping("/message")
+    @RequestMapping(value = "/message", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void putMessage(@RequestBody Message message) {
+    	ReadMessageUseCase.createOrUpdateMessage(message);
     }
 //    @RequestMapping("/hello/{player}")
 //    public Message message(@PathVariable String player) {//REST Endpoint.

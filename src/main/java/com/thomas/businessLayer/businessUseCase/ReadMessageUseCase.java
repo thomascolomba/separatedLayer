@@ -8,7 +8,7 @@ public class ReadMessageUseCase {
 		return MessageDaoImpl.getMessage(messageName);
 	}
 
-	public static void writeMessage(Message message) {
+	public static void createOrUpdateMessage(Message message) {
 		MessageDaoImpl.setMessage(message);
 	}
 }

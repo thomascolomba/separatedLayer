@@ -4,6 +4,10 @@ public class Message {
 	 
     String name;
     String text;
+    
+    public Message() {
+    	
+    }
  
     public Message(String name, String text) {
         this.name = name;

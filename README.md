@@ -15,6 +15,7 @@ The aim of this project is to show how to separate the java layer processing bet
 "technical" contains utility classes.
 </div>  
 <div>
+  &nbsp;
 <div>
 "request handling" can interact with "business" but not "dao".
 </div>
@@ -25,13 +26,16 @@ The aim of this project is to show how to separate the java layer processing bet
 "business" interacts with both.
 </div>
 <div>
+  &nbsp;
 </div>
 <div>
 "technical" can interact with any layer.
 </div>
 <div>
+  &nbsp;
 </div>
 <div>
+  &nbsp;
 </div>
 A user can use the application with Postman in order to create and retrieve messages.
 By default, a user can access msg1 and msg2.

@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "b12a92e2-f3bd-47a6-a1b3-42d84bfa9490",
+		"name": "separatedLayer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/separatedLayer/message/msg1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "name",
+						"value": "msg1"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/separatedLayer/message/msg1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"separatedLayer",
+						"message",
+						"msg1"
+					]
+				},
+				"description": "retrieve msg 1"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/separatedLayer/message/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\":\"msg3\",\r\n\t\"text\":\"myThirdMessage\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/separatedLayer/message/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"separatedLayer",
+						"message",
+						""
+					]
+				},
+				"description": "crate msg 3"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/separatedLayer/message/msg3",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "name",
+						"value": "msg1"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/separatedLayer/message/msg3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"separatedLayer",
+						"message",
+						"msg3"
+					]
+				},
+				"description": "retrieve message 3 (to use after msg 3 creation)"
+			},
+			"response": []
+		}
+	]
+}

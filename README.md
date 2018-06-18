@@ -40,3 +40,6 @@ The aim of this project is to show how to separate the java layer processing bet
 A user can use the application with Postman in order to create and retrieve messages.
 By default, a user can access msg1 and msg2.
 </div>
+<div>
+The postman requests are located in src/main/resources/
+</div>

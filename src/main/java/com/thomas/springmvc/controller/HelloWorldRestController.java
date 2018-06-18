@@ -28,15 +28,8 @@ public class HelloWorldRestController {
         return new ResponseEntity<Message>(ReadMessageUseCase.readMessage(name), HttpStatus.OK);
     }
 
-//    @PutMapping("/message")
     @RequestMapping(value = "/message", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void putMessage(@RequestBody Message message) {
     	ReadMessageUseCase.createOrUpdateMessage(message);
     }
-//    @RequestMapping("/hello/{player}")
-//    public Message message(@PathVariable String player) {//REST Endpoint.
-// 
-//        Message msg = new Message(player, "Hello " + player);
-//        return msg;
-//    }
 }

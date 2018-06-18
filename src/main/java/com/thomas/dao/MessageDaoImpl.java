@@ -1,14 +1,14 @@
 package com.thomas.dao;
 
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import com.thomas.businessLayer.businessObject.Message;
 
 public class MessageDaoImpl {
-	private static HashMap<String, Message> messages;// = new HashMap<>();
+	private static ConcurrentHashMap<String, Message> messages;//just emulating a database
 	static
     {
-		messages = new HashMap<String, Message>();
+		messages = new ConcurrentHashMap<String, Message>();
 		messages.put("msg1", new Message("msg1", "myFirstMessage"));
 		messages.put("msg2", new Message("msg2", "mySecondMessage"));
     }
